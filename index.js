@@ -2,9 +2,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+const fileName = "README.md";
 
 // TODO: Create an array of questions for user input
-//  Tests, and Questions
 const questions = [
   {
     type: "input",
@@ -30,8 +30,32 @@ const questions = [
   },
   {
     type: "input",
+    message: "Please list your table of content.",
+    name: "contentsList",
+    when: (answer) => answer.tableOfContents === true,
+  },
+  {
+    type: "input",
     message: "What are the steps for installation?",
     name: "installation",
+    when: (answer) => {
+      return !answer.installationNext || answer.addInstallation === true;
+    },
+  },
+  {
+    type: "confirm",
+    message: "Do you want to add another installation step?",
+    name: "addInstallation",
+    default: false,
+    when: (answer) => {
+      return !answer.installationNext || answer.addInstallation === true;
+    },
+  },
+  {
+    type: "input",
+    message: "What is the next step for installation?",
+    name: "installationNext",
+    when: (answer) => answer.addInstallation === true,
   },
   {
     type: "input",
@@ -59,11 +83,10 @@ const questions = [
       "The Unlicense",
     ],
   },
-
   {
     type: "input",
     message: "Include the contributors of this project?",
-    name: "Contributing",
+    name: "contributors",
   },
   {
     type: "input",
@@ -74,11 +97,57 @@ const questions = [
     type: "input",
     message: "Please enter your test information of your project.",
     name: "tests",
+  },
+  {
+    type: "confirm",
+    message: "Do yo like to include your contact information for user",
+    name: "questions",
   },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(data) {
+  return `# ${data.title}
+
+## Description
+
+${data.description}
+
+## Table of Contents
+
+${data.tableOfContents}
+
+## Installation
+
+${data.installation}
+${data.installationNext}
+
+## Usage
+
+${data.usage}
+
+## License
+
+${data.license}
+
+## Contributors
+
+${data.contributors}
+
+## Tests
+
+${data.tests}
+
+## Questions
+${data.questions}
+
+
+  
+  
+  
+  
+  `;
+}
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -88,4 +157,16 @@ init();
 
 inquirer.prompt(questions).then((response) => {
   console.log(response);
+  fs.writeFile("response.json", JSON.stringify(response, null, 2), (err) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("success");
+  });
+  fs.writeFile("README2.md", writeToFile(response), (err) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("success2");
+  });
 });
