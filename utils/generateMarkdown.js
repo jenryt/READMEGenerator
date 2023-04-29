@@ -148,10 +148,6 @@ ${data.usage}
 ${licenseSection}
 ${licenseLink}
 
-## Contributors
-
-${data.contributors}
-
 ## Tests
 
 ${data.tests}
