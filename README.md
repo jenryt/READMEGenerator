@@ -15,14 +15,17 @@ This Node.js application aims to help users creating a professional README file 
 - [License](#license)
 - [Questions](#questions)
 
-
 ## Installation
 
-(1) Clone or download the repository to your device. (2) Install node.js v18.15.0 (3) Install the necessary package: inquirer@8.2.4
+- Clone or download the repository to your device.
+- Install node.js v18.15.0
+- Install the necessary package: inquirer@8.2.4
 
 ## Usage
 
-(1) Run the application by typing “node index.js” in Terminal (Mac users) or PowerShell (Windows users) (2) Answers as detail as possible to all the questions that prompted. (3) After answering all the questions, look for README.md 
+- Run the application by typing “node index.js” in Terminal (Mac users) or PowerShell (Windows users)
+- Answers as detail as possible to all the questions that prompted.
+- After answering all the questions, look for README.md
 
 ## License
 
@@ -31,7 +34,7 @@ https://opensource.org/license/mit/
 
 ## Tests
 
-Currently, there is no test available. 
+Currently, there is no test available.
 
-My GitHub: jenryt
-My email: email@gmail.com
+- My GitHub: jenryt
+- My email: email@gmail.com

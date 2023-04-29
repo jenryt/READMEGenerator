@@ -154,10 +154,10 @@ ${data.tests}
 
 `;
   if (data.github) {
-    readmeContent += `My GitHub: ${data.github}\n`;
+    readmeContent += `- My GitHub: ${data.github}\n`;
   }
   if (data.email) {
-    readmeContent += `My email: ${data.email}`;
+    readmeContent += `- My email: ${data.email}`;
   }
   return readmeContent;
 }
