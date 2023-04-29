@@ -1,8 +1,8 @@
 {
   "title": "README generator",
   "description": "This Node.js application aims to help users creating a professional README file by taking in inputs from the command line. This application covers the common topics of a professional README file, which allows users to simply answer the questions in order to generate a complete README file. The simplicity and comprehensiveness of this application allows users to devote more time and effort on developing their project.",
-  "installation": "(1) Clone or download the repository to your device. (2) Install node.js v18.15.0 (3) Install the necessary package: inquirer@8.2.4",
-  "usage": "(1) Run the application by typing “node index.js” in Terminal (Mac users) or PowerShell (Windows users) (2) Answers as detail as possible to all the questions that prompted. (3) After answering all the questions, look for README.md ",
+  "installation": "* Clone or download the repository to your device. * Install node.js v18.15.0 * Install the necessary package: inquirer@8.2.4",
+  "usage": "* Run the application by typing “node index.js” in Terminal (Mac users) or PowerShell (Windows users) * Answers as detail as possible to all the questions that prompted. * After answering all the questions, look for README.md ",
   "contributing": "Currently, this application is not opened for further contribution. ",
   "tests": "Currently, there is no test available. ",
   "license": "MIT License",
