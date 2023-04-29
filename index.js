@@ -24,43 +24,25 @@ const questions = [
     name: "description",
   },
   {
-    type: "confirm",
-    message: "Do you want to include a table of contents?",
-    name: "tableOfContents",
-  },
-  {
-    type: "input",
-    message: "Please list your table of content.",
-    name: "contentsList",
-    when: (answer) => answer.tableOfContents === true,
-  },
-  {
     type: "input",
     message: "What are the steps for installation?",
     name: "installation",
-    when: (answer) => {
-      return !answer.installationNext || answer.addInstallation === true;
-    },
-  },
-  {
-    type: "confirm",
-    message: "Do you want to add another installation step?",
-    name: "addInstallation",
-    default: false,
-    when: (answer) => {
-      return !answer.installationNext || answer.addInstallation === true;
-    },
   },
   {
     type: "input",
-    message: "What is the next step for installation?",
-    name: "installationNext",
-    when: (answer) => answer.addInstallation === true,
-  },
-  {
-    type: "input",
-    message: "What is this project for?",
+    message: "How this app is used?",
     name: "usage",
+  },
+  {
+    type: "input",
+    message:
+      "Include the guidelines for how to contribute to the software project.",
+    name: "contributing",
+  },
+  {
+    type: "input",
+    message: "Please enter your test information for this project.",
+    name: "tests",
   },
   {
     type: "list",
@@ -74,96 +56,49 @@ const questions = [
       'BSD 2-Clause "Simplified" License',
       'BSD 3-Clause "New" or "Revised" License',
       "Boost Software License 1.0",
-      "Creative Commons Zero v1.0 Universal",
       "Eclipse Public License 2.0",
       "GNU Affero General Public License v3.0",
       "GNU General Public License v2.0",
       "GNU Lesser General Public License v2.1",
       "Mozilla Public License 2.0",
-      "The Unlicense",
     ],
   },
+
   {
-    type: "input",
-    message: "Include the contributors of this project?",
-    name: "contributors",
+    type: "confirm",
+    message: "Do you want to include your gitHub username?",
+    name: "includeGitHub",
+    default: true,
   },
   {
     type: "input",
-    message: "Please enter your test information of your project.",
-    name: "tests",
-  },
-  {
-    type: "input",
-    message: "Please enter your test information of your project.",
-    name: "tests",
+    message: "Please provide your gitHub username.",
+    name: "github",
+    when: (answer) => answer.includeGitHub === true,
   },
   {
     type: "confirm",
-    message: "Do yo like to include your contact information for user",
-    name: "questions",
+    message: "Do you want to include your email address?",
+    name: "includeEmail",
+    default: true,
+  },
+  {
+    type: "input",
+    message: "Please provide your emial address.",
+    name: "email",
+    when: (answer) => answer.includeEmail === true,
   },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(data) {
-  return `# ${data.title}
-
-## Description
-
-${data.description}
-
-## Table of Contents
-
-${data.tableOfContents}
-
-## Installation
-
-${data.installation}
-${data.installationNext}
-
-## Usage
-
-${data.usage}
-
-## License
-
-${data.license}
-
-## Contributors
-
-${data.contributors}
-
-## Tests
-
-${data.tests}
-
-## Questions
-${data.questions}
-
-
-  
-  
-  
-  
-  `;
-}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
-inquirer.prompt(questions).then((response) => {
-  console.log(response);
-  fs.writeFile("response.json", JSON.stringify(response, null, 2), (err) => {
+inquirer.prompt(questions).then((data) => {
+  console.log(data);
+  fs.writeFile("response.json", JSON.stringify(data, null, 2), (err) => {
     if (err) {
       return console.log(err);
     }
     console.log("success");
   });
-  fs.writeFile("README2.md", writeToFile(response), (err) => {
+  fs.writeFile("README.md", generateMarkdown(data), (err) => {
     if (err) {
       return console.log(err);
     }
