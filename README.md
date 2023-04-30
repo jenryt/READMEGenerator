@@ -33,7 +33,7 @@ This project is licensed under the MIT License - see the link for detail
 https://opensource.org/license/mit/
 
 ## Credits
-Starter Code cloned from The Coding Bootcamp
+Starter Code cloned from The Coding Bootcamp<br>
 License Badge created by shields.io
 License links provide by opensource.org
 
