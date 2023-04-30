@@ -34,9 +34,7 @@ https://opensource.org/license/mit/
 
 ## Credits
 Starter Code cloned from The Coding Bootcamp
-
 License Badge created by shields.io
-
 License links provide by opensource.org
 
 ## Tests
