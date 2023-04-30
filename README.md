@@ -37,4 +37,4 @@ https://opensource.org/license/mit/
 Currently, there is no test available.
 
 - My GitHub: jenryt
-- My email: email@gmail.com
+- My email: bicodeture@gmail.com
