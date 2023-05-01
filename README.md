@@ -29,7 +29,7 @@ This Node.js application aims to help users creating a professional README file 
 
 Please find attached demo videos showcasing the operation of our application, as well as a generated README file demonstrating its functionality.<br>
 https://drive.google.com/file/d/1pfrh8wbwBFxLDhI3LU7cghYhm91F4kUj/view <br>
-https://watch.screencastify.com/v/CZuTTOtumR1nMofscLtu <br>
+https://drive.google.com/file/d/1hf5_6Fnj_JZL53kLDsXzRaHq-Sfi2ka9/view <br>
 
 
 ## License
