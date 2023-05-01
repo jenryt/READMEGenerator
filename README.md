@@ -27,8 +27,9 @@ This Node.js application aims to help users creating a professional README file 
 2. Answers as detail as possible to all the questions that prompted.
 3. After answering all the questions, look for README.md
 
-Please find attached demo videos showcasing the operation of our application, as well as a generated README file demonstrating its functionality.
-https://drive.google.com/file/d/1pfrh8wbwBFxLDhI3LU7cghYhm91F4kUj/view
+Please find attached demo videos showcasing the operation of our application, as well as a generated README file demonstrating its functionality.<br>
+https://drive.google.com/file/d/1pfrh8wbwBFxLDhI3LU7cghYhm91F4kUj/view <br>
+https://watch.screencastify.com/v/CZuTTOtumR1nMofscLtu <br>
 
 
 ## License
